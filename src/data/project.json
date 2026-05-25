@@ -1,0 +1,99 @@
+[
+  {
+    "id": "fresh-fold",
+    "title": "Fresh Fold — Laundry Management System",
+    "type": "Full-Stack Web App",
+    "description": "A full-stack Java Spring MVC application designed to manage user registrations, logins, orders, and laundry operations. Built step-by-step with each feature in separate commits for clarity. Demonstrates clean MVC architecture, role-based access, and end-to-end service management.",
+    "stack": ["Java", "Spring MVC", "JSP", "HTML/CSS/JS", "SQL Server", "Maven"],
+    "features": [
+      "Customer registration, login & order placement",
+      "Service catalog with pricing and order tracking",
+      "Admin dashboard for order, customer & staff management",
+      "Automated billing and invoice generation",
+      "Role-based access (Admin / Customer / Staff)"
+    ],
+    "images": [
+      "/projects/fresh-fold/1.png",
+      "/projects/fresh-fold/2.png",
+      "/projects/fresh-fold/3.png"
+    ],
+    "repo_url": "https://github.com/asma-mf/fresh-fold",
+    "api_url": "https://api.github.com/repos/asma-mf/fresh-fold",
+    "publish_url": null,
+    "start_date": "2025-11-17",
+    "status": "under-development",
+    "featured": true
+  },
+  {
+    "id": "fresh-fold-laundry",
+    "title": "Fresh Fold Laundry — Admin Module",
+    "type": "Web Application",
+    "description": "Admin module for the Fresh Fold Laundry Management System built using Java, JSP, and Servlets. Allows administrators to manage users, track orders, update laundry status, handle payments, and monitor overall system performance.",
+    "stack": ["Java", "JSP", "Servlets", "HTML/CSS/JS", "File Handling"],
+    "features": [
+      "User management and access control",
+      "Real-time order status updates",
+      "Payment tracking and reporting",
+      "System performance monitoring dashboard"
+    ],
+    "images": [
+      "/projects/fresh-fold-laundry/1.png",
+      "/projects/fresh-fold-laundry/2.png",
+      "/projects/fresh-fold-laundry/3.png"
+    ],
+    "repo_url": "https://github.com/asma-mf/fresh-fold-laundry",
+    "api_url": "https://api.github.com/repos/asma-mf/fresh-fold-laundry",
+    "publish_url": null,
+    "start_date": "2025-10-25",
+    "status": "archived",
+    "featured": false
+  },
+  {
+    "id": "fitness-membership-system",
+    "title": "Fitness Membership Management System",
+    "type": "Web Application",
+    "description": "A simple fitness center membership management system built using Java, JSP, and Servlets with file handling. Allows users to register, view current memberships, and manage membership plans. Designed using OOP concepts and basic HTML/CSS for the interface.",
+    "stack": ["Java", "JSP", "Servlets", "OOP", "File Handling", "HTML/CSS"],
+    "features": [
+      "Member registration & subscription plans",
+      "Trainer assignment and schedule management",
+      "Attendance tracking & reporting",
+      "Persistent storage via file handling"
+    ],
+    "images": [
+      "/projects/fitness-membership-system/1.png",
+      "/projects/fitness-membership-system/2.png",
+      "/projects/fitness-membership-system/3.png"
+    ],
+    "repo_url": "https://github.com/asma-mf/fitness-membership-system",
+    "api_url": "https://api.github.com/repos/asma-mf/fitness-membership-system",
+    "publish_url": null,
+    "start_date": "2025-05-21",
+    "status": "archived",
+    "featured": false
+  },
+  {
+    "id": "sql-basics-for-beginners",
+    "title": "SQL Basics for Beginners",
+    "type": "Educational Resource",
+    "description": "A simple SQL project for beginners to learn basic data types, ER diagram drawing, and table creation with examples. Includes SQL practice queries, joins, stored procedures, and database design exercises — useful for learning and revising SQL concepts.",
+    "stack": ["SQL", "Database Design", "ER Diagrams"],
+    "features": [
+      "SQL query practice with real schemas",
+      "Database design & normalization exercises",
+      "ER diagram creation and documentation",
+      "Beginner-friendly examples and explanations"
+    ],
+    "images": [
+      "/projects/sql-basics-for-beginners/1.png",
+      "/projects/sql-basics-for-beginners/2.png",
+      "/projects/sql-basics-for-beginners/3.png"
+    ],
+    "repo_url": "https://github.com/asma-mf/sql-basics-for-beginners",
+    "api_url": "https://api.github.com/repos/asma-mf/sql-basics-for-beginners",
+    "publish_url": null,
+    "start_date": "2025-06-27",
+    "status": "active",
+    "featured": false
+  }
+]
