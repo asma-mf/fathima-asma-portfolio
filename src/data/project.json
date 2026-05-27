@@ -69,9 +69,11 @@
       "Persistent storage via file handling"
     ],
     "images": [
-      "/projects/fitness-membership-system/1.png",
-      "/projects/fitness-membership-system/2.png",
-      "/projects/fitness-membership-system/3.png"
+      "/projects/fitness-membership-system/pic1.PNG",
+      "/projects/fitness-membership-system/pic2.PNG",
+      "/projects/fitness-membership-system/pic3.PNG",
+      "/projects/fitness-membership-system/pics4.PNG",
+      "/projects/fitness-membership-system/pics5.PNG"
     ],
     "repo_url": "https://github.com/asma-mf/fitness-membership-system",
     "api_url": "https://api.github.com/repos/asma-mf/fitness-membership-system",
