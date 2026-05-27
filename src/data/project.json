@@ -39,7 +39,12 @@
     "images": [
       "/projects/fresh-fold-laundry/1.png",
       "/projects/fresh-fold-laundry/2.png",
-      "/projects/fresh-fold-laundry/3.png"
+      "/projects/fresh-fold-laundry/3.png",
+      "/projects/fresh-fold-laundry/4.png",
+      "/projects/fresh-fold-laundry/5.png",
+      "/projects/fresh-fold-laundry/6.png",
+      "/projects/fresh-fold-laundry/7.png",
+      "/projects/fresh-fold-laundry/8.png"
     ],
     "repo_url": "https://github.com/asma-mf/fresh-fold-laundry",
     "api_url": "https://api.github.com/repos/asma-mf/fresh-fold-laundry",
