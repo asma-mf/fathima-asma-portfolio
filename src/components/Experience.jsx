@@ -2,7 +2,7 @@ import { GraduationCap, Code2, Database, Sparkles } from "lucide-react";
 const timeline = [{
   icon: GraduationCap,
   period: "2023 — Present",
-  title: "B.Tech in Computer Science",
+  title: "BSC (HONS) software Engineering",
   org: "University · 3rd Year",
   desc: "Core coursework in Data Structures, Algorithms, DBMS, Operating Systems, and Software Engineering. Maintaining a strong academic record while shipping side projects."
 }, {

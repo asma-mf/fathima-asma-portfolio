@@ -44,8 +44,6 @@ export function Contact() {
             {/* Contact details */}
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm opacity-90 mb-6">
               <span className="inline-flex items-center gap-2">
-                <Mail className="h-4 w-4" />
-                {emailLink?.url?.replace("mailto:", "") ?? "fathuasma456@gmail.com"}
               </span>
               <span className="inline-flex items-center gap-2">
                 📍 Open to remote &amp; on-site
