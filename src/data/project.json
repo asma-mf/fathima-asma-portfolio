@@ -13,10 +13,12 @@
       "Role-based access (Admin / Customer / Staff)"
     ],
     "images": [
-      "/projects/fresh-fold/Capture1.png",
-      "/projects/fresh-fold/Capture2.png",
-      "/projects/fresh-fold/Capture3.png",
-      "/projects/fresh-fold/Capture4.png"
+      "/projects/fresh-fold/Capture1.PNG",
+      "/projects/fresh-fold/Capture2.PNG",
+      "/projects/fresh-fold/Capture3.PNG",
+      "/projects/fresh-fold/Capture4.PNG",
+      "/projects/fresh-fold/Capture5.PNG",
+      "/projects/fresh-fold/Capture6.PNG"
     ],
     "repo_url": "https://github.com/asma-mf/fresh-fold",
     "api_url": "https://api.github.com/repos/asma-mf/fresh-fold",
