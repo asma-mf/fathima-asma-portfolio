@@ -95,9 +95,8 @@
       "Beginner-friendly examples and explanations"
     ],
     "images": [
-      "/projects/sql-basics-for-beginners/1.png",
-      "/projects/sql-basics-for-beginners/2.png",
-      "/projects/sql-basics-for-beginners/3.png"
+      "/projects/sql-basics-for-beginners/sqlCapture.PNG"
+    
     ],
     "repo_url": "https://github.com/asma-mf/sql-basics-for-beginners",
     "api_url": "https://api.github.com/repos/asma-mf/sql-basics-for-beginners",
