@@ -1,0 +1,6 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#f5f0f1"/>
+  <rect x="340" y="185" width="120" height="80" rx="8" fill="#d4c0c4" opacity="0.5"/>
+  <text x="400" y="310" font-family="system-ui" font-size="16" fill="#9a8086" text-anchor="middle">Add your screenshots here</text>
+  <text x="400" y="335" font-family="system-ui" font-size="13" fill="#b8a0a8" text-anchor="middle">Place images in /public/projects/{project-name}/</text>
+</svg>

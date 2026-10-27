@@ -1,0 +1,26 @@
+[
+  {
+    "id": "github",
+    "label": "GitHub",
+    "url": "https://github.com/asma-mf",
+    "icon": "/icons/github.png",
+    "type": "image",
+    "external": true
+  },
+  {
+    "id": "linkedin",
+    "label": "LinkedIn",
+    "url": "https://www.linkedin.com/in/fathima-asma-5602403ab/",
+    "icon": "/icons/linkedin.png",
+    "type": "image",
+    "external": true
+  },
+  {
+    "id": "stackoverflow",
+    "label": "Stack Overflow",
+    "url": "https://stackoverflow.com/users/32765811/fathima-asma",
+    "icon": "/icons/stack-overflow.png",
+    "type": "image",
+    "external": true
+  }
+]
