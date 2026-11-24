@@ -1,64 +1,54 @@
-import { GraduationCap, Code2, Database, Sparkles } from "lucide-react";
-const timeline = [{
-  icon: GraduationCap,
-  period: "2023 — Present",
-  title: "BSC (HONS) software Engineering",
-  org: "University · 3rd Year",
-  desc: "Core coursework in Data Structures, Algorithms, DBMS, Operating Systems, and Software Engineering. Maintaining a strong academic record while shipping side projects."
-}, {
-  icon: Code2,
-  period: "2024 — 2025",
-  title: "Fresh Fold — Academic Capstone",
-  org: "Java · Spring MVC · SQL Server",
-  desc: "Designed and developed a full-stack laundry management system end-to-end — from database schema and MVC architecture to UI, authentication, and order workflows."
-}, {
-  icon: Database,
-  period: "2024",
-  title: "Fitness Membership System",
-  org: "Java · JSP · Servlets · OOP",
-  desc: "Built a member, trainer, and attendance management application applying object-oriented design and file-handling persistence as a hands-on OOP project."
-}, {
-  icon: Sparkles,
-  period: "Ongoing",
-  title: "Self-Learning & Practice",
-  org: "Spring Boot · DSA · SQL",
-  desc: "Currently deepening Spring Boot, REST APIs, and full-stack development. Daily problem-solving in Java on LeetCode and SQL practice across real-world schemas."
-}];
-export function Experience() {
-  return <section id="experience" className="py-24 border-t border-border bg-muted/30">
-      <div className="container mx-auto px-6 max-w-5xl">
-        <div className="mb-14">
-          <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-            Experience
-          </p>
-          <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight">
-            Academic projects & self-learning
-          </h2>
-          <p className="text-muted-foreground mt-3 max-w-2xl">
-            While I haven&apos;t held a formal industry role yet, I&apos;ve treated every
-            academic project and self-study sprint like real engineering work — with
-            clean architecture, version control, and a focus on shipping.
-          </p>
-        </div>
+import { Reveal } from "./Reveal";
+import { useInView } from "@/hooks/useInView";
+import { timeline } from "@/lib/content";
 
-        <ol className="relative border-l border-border ml-3 space-y-10">
-          {timeline.map(t => {
-          const Icon = t.icon;
-          return <li key={t.title} className="ml-8">
-                <span className="absolute -left-[18px] mt-0.5 h-9 w-9 rounded-full bg-primary text-primary-foreground ring-4 ring-background flex items-center justify-center">
-                  <Icon className="h-4 w-4" />
-                </span>
-                <p className="text-xs font-medium text-muted-foreground mb-1">
-                  {t.period}
-                </p>
-                <h3 className="font-display text-lg font-semibold">{t.title}</h3>
-                <p className="text-sm text-primary mb-2">{t.org}</p>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {t.desc}
-                </p>
-              </li>;
-        })}
-        </ol>
+export function Experience() {
+  const [lineRef, lineIn] = useInView(0.05, "0px 0px -20% 0px");
+  return (
+    <section id="experience" className="relative py-24 sm:py-32" aria-labelledby="exp-title">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+          <Reveal className="lg:sticky lg:top-28 lg:self-start">
+            <p className="eyebrow">Experience</p>
+            <h2 id="exp-title" className="section-title">
+              Academic projects &amp; <em>self-learning</em>
+            </h2>
+            <p className="mt-5 text-base text-muted sm:text-lg">
+              While I haven&apos;t held a formal industry role yet, I&apos;ve treated every academic project and
+              self-study sprint like real engineering work — with clean architecture, version control, and a focus on
+              shipping.
+            </p>
+          </Reveal>
+
+          <ol className="relative ml-4 space-y-10 sm:ml-6">
+            <div
+              ref={lineRef}
+              className={`timeline-line absolute -left-px top-2 h-[calc(100%-1rem)] w-px bg-gradient-to-b from-accent via-line to-transparent ${
+                lineIn ? "in" : ""
+              }`}
+              aria-hidden
+            />
+            {timeline.map((t, i) => {
+              const Icon = t.icon;
+              return (
+                <li key={t.title} className="relative pl-10 sm:pl-12">
+                  <Reveal delay={i * 80}>
+                    <span className="absolute -left-5 top-1 grid h-10 w-10 place-items-center rounded-full bg-primary text-primary-fg ring-[6px] ring-bg">
+                      <Icon className="h-4 w-4" aria-hidden />
+                    </span>
+                    <article className="card p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-lift">
+                      <p className="chip mb-3">{t.period}</p>
+                      <h3 className="font-display text-xl font-semibold leading-snug sm:text-2xl">{t.title}</h3>
+                      <p className="mt-1 text-sm font-semibold text-accent-ink">{t.org}</p>
+                      <p className="mt-3 text-sm leading-relaxed text-muted sm:text-base">{t.desc}</p>
+                    </article>
+                  </Reveal>
+                </li>
+              );
+            })}
+          </ol>
+        </div>
       </div>
-    </section>;
+    </section>
+  );
 }

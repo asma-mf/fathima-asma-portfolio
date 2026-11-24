@@ -1,0 +1,314 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ───────────── Design tokens: "Botanical Editorial" ─────────────
+   Palette is drawn from the portrait: forest greens, a coral-blush
+   headscarf and warm cream. */
+:root {
+  --bg: #f7f3ea;
+  --bg-soft: #efe9dc;
+  --surface: #fffdf8;
+  --ink: #14261d;
+  --muted: #55655c;
+  --line: rgba(20, 38, 29, 0.13);
+  --primary: #1f4d3a;
+  --primary-fg: #fbf8f1;
+  --accent: #e4766a;
+  --accent-ink: #b24a3f;
+  --accent-soft: #f8dcd4;
+  --sage: #a8c3a0;
+  --gold: #c09a5b;
+  --shadow: 0 1px 2px rgba(20, 38, 29, 0.05), 0 12px 32px -12px rgba(20, 38, 29, 0.18);
+  --shadow-lg: 0 2px 4px rgba(20, 38, 29, 0.06), 0 32px 64px -24px rgba(20, 38, 29, 0.32);
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #0b1812;
+  --bg-soft: #10221a;
+  --surface: #132a20;
+  --ink: #f1ede2;
+  --muted: #a7b8ad;
+  --line: rgba(241, 237, 226, 0.13);
+  --primary: #9ad1b0;
+  --primary-fg: #0b1812;
+  --accent: #f08c80;
+  --accent-ink: #f5a79c;
+  --accent-soft: rgba(240, 140, 128, 0.16);
+  --sage: #5f8a6f;
+  --gold: #d6b278;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px -12px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 2px 4px rgba(0, 0, 0, 0.35), 0 32px 64px -24px rgba(0, 0, 0, 0.7);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-soft: var(--bg-soft);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-primary: var(--primary);
+  --color-primary-fg: var(--primary-fg);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-soft: var(--accent-soft);
+  --color-sage: var(--sage);
+  --color-gold: var(--gold);
+  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --shadow-soft: var(--shadow);
+  --shadow-lift: var(--shadow-lg);
+}
+
+/* ───────────── Base ───────────── */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+}
+
+/* Subtle paper grain for a tactile, premium feel */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .08 0 0 0 0 .15 0 0 0 0 .11 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.dark body::before {
+  opacity: 0.2;
+}
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+@layer components {
+/* ───────────── Utility components ───────────── */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+}
+.eyebrow::before {
+  content: "";
+  width: 2rem;
+  height: 1px;
+  background: currentColor;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-top: 1rem;
+}
+.section-title em {
+  font-style: italic;
+  color: var(--accent-ink);
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow);
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 3rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, color 0.25s ease,
+    border-color 0.25s ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btn-primary {
+  background: var(--primary);
+  color: var(--primary-fg);
+  box-shadow: 0 10px 24px -10px var(--primary);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line);
+}
+.btn-ghost:hover {
+  border-color: var(--ink);
+  background: var(--surface);
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--ink);
+}
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.icon-btn:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+}
+.icon-btn img {
+  width: 1.4rem;
+  height: 1.4rem;
+  object-fit: contain;
+}
+.dark img[data-mono] {
+  filter: invert(1);
+}
+
+}
+
+/* ───────────── Animations ───────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--d, 0ms);
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+.bar-fill {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--d, 0ms);
+}
+.in .bar-fill {
+  transform: scaleX(1);
+}
+.timeline-line {
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 1.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.timeline-line.in {
+  transform: scaleY(1);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(30px, -24px, 0) scale(1.08); }
+}
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+@keyframes ping-soft {
+  75%, 100% { transform: scale(2.4); opacity: 0; }
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes sway {
+  0%, 100% { transform: rotate(-1.5deg); }
+  50% { transform: rotate(1.5deg); }
+}
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-drift { animation: drift 16s ease-in-out infinite; }
+.animate-spin-slow { animation: spin-slow 28s linear infinite; }
+.animate-marquee { animation: marquee 38s linear infinite; }
+.animate-ping-soft { animation: ping-soft 1.8s cubic-bezier(0, 0, 0.2, 1) infinite; }
+.animate-rise { animation: rise 1s cubic-bezier(0.2, 0.7, 0.2, 1) both; animation-delay: var(--d, 0ms); }
+.animate-sway { animation: sway 7s ease-in-out infinite; transform-origin: bottom center; }
+.fade-in { animation: fade-in 0.35s ease both; }
+.marquee:hover .animate-marquee { animation-play-state: paused; }
+
+.arch {
+  border-radius: 999px 999px 2rem 2rem;
+}
+
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    transition-delay: 0ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+  .bar-fill { transform: none; }
+  .timeline-line { transform: none; }
+  .animate-marquee { animation: none; }
+}

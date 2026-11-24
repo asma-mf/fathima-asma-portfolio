@@ -28,6 +28,53 @@
     "featured": true
   },
   {
+    "id": "pc-forge",
+    "title": "PCForge — Computer Shop & Custom PC Builder Platform",
+    "type": "Full-Stack · Web, API, AI & Mobile",
+    "description": "A full-stack, cross-platform e-commerce and custom PC building ecosystem modelled on enthusiast computer retail. Customers design custom rigs with real-time hardware compatibility validation, LangGraph AI agents recommend specifications and reserve inventory, store technicians review builds in a dedicated web portal, and after-sales workflows handle RMA and appointment scheduling.",
+    "stack": [
+      "ASP.NET Core (.NET 8)",
+      "Entity Framework Core",
+      "PostgreSQL",
+      "React 19 + Vite",
+      "Flutter",
+      "FastAPI",
+      "LangGraph",
+      "Google Gemini"
+    ],
+    "features": [
+      "Custom PC builder with live wattage, CPU–motherboard socket, DDR generation and form-factor compatibility checks",
+      "Five specialised LangGraph AI agents: requirements, inventory, build, order planning and after-sales",
+      "React staff portal with KPI dashboard, build-review queue, inventory, orders and service requests",
+      "Flutter (Material 3) Android client with catalog search, barcode scanner and appointment management",
+      "JWT role-based access (Admin / Staff / Customer), email notifications, CI pipeline and test suites on every tier"
+    ],
+    "images": [
+      "/projects/pc-forge/dashboard.png",
+      "/projects/pc-forge/inventory.png",
+      "/projects/pc-forge/products.png",
+      "/projects/pc-forge/login.png"
+    ],
+    "captions": [
+      "Staff portal — system overview dashboard with live operational KPIs",
+      "Staff portal — inventory management with stock status and quick adjustments",
+      "Staff portal — hardware catalog with product management",
+      "Staff portal — secure sign-in for authorised staff"
+    ],
+    "repo_url": "https://github.com/thisal-d/pc-forge",
+    "api_url": "https://api.github.com/repos/thisal-d/pc-forge",
+    "publish_url": "https://pc-forge-admin.pages.dev",
+    "extra_links": [
+      { "label": "API docs", "url": "https://pc-forge.onrender.com/swagger" },
+      { "label": "Android APK", "url": "https://github.com/thisal-d/pc-forge/releases" }
+    ],
+    "note": "Additional project — repository owned by thisal-d. Screenshots are from the live staff portal, which requires a staff sign-in.",
+    "start_date": null,
+    "status": "active",
+    "featured": false,
+    "additional": true
+  },
+  {
     "id": "fresh-fold-laundry",
     "title": "Fresh Fold Laundry — Admin Module",
     "type": "Web Application",
@@ -94,10 +141,7 @@
       "ER diagram creation and documentation",
       "Beginner-friendly examples and explanations"
     ],
-    "images": [
-      "/projects/sql-basics-for-beginners/sqlCapture.PNG"
-    
-    ],
+    "images": ["/projects/sql-basics-for-beginners/sqlCapture.PNG"],
     "repo_url": "https://github.com/asma-mf/sql-basics-for-beginners",
     "api_url": "https://api.github.com/repos/asma-mf/sql-basics-for-beginners",
     "publish_url": null,

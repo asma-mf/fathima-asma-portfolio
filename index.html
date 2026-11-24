@@ -1,16 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fathima Asma — Java Developer</title>
-    <meta name="description" content="Portfolio of Fathima Asma, a Java Developer seeking software engineering internships. Spring Boot, REST APIs, and clean architecture." />
+    <title>Fathima Asma — Java Developer · Software Engineering Student</title>
+    <meta
+      name="description"
+      content="Portfolio of Fathima Asma, a third-year Software Engineering student and aspiring Java Developer seeking internships. Spring MVC, JSP, Servlets, SQL and clean architecture."
+    />
+    <meta name="author" content="Fathima Asma" />
+    <meta name="theme-color" content="#f7f3ea" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b1812" media="(prefers-color-scheme: dark)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Fathima Asma — Java Developer" />
+    <meta
+      property="og:description"
+      content="Third-year Software Engineering student building scalable web applications with Java and Spring MVC."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%231f4d3a'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='34' font-style='italic' text-anchor='middle' fill='%23f7f3ea'%3EA%3C/text%3E%3Ccircle cx='47' cy='45' r='4' fill='%23e4766a'/%3E%3C/svg%3E"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      // Apply the saved / preferred theme before first paint to avoid a flash.
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var dark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+          if (dark) document.documentElement.classList.add("dark");
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
+    <noscript>This portfolio needs JavaScript enabled. Contact: fathuasma456@gmail.com</noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

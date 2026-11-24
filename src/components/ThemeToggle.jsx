@@ -1,22 +1,34 @@
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
-import { Button } from "@/components/ui/button";
+
 export function ThemeToggle() {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(() =>
+    typeof document !== "undefined" ? document.documentElement.classList.contains("dark") : false,
+  );
+
   useEffect(() => {
-    const saved = typeof window !== "undefined" ? localStorage.getItem("theme") : null;
-    const prefersDark = typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const isDark = saved ? saved === "dark" : prefersDark;
-    setDark(isDark);
-    document.documentElement.classList.toggle("dark", isDark);
-  }, []);
+    document.documentElement.classList.toggle("dark", dark);
+  }, [dark]);
+
   const toggle = () => {
     const next = !dark;
     setDark(next);
-    document.documentElement.classList.toggle("dark", next);
-    localStorage.setItem("theme", next ? "dark" : "light");
+    try {
+      localStorage.setItem("theme", next ? "dark" : "light");
+    } catch {
+      /* storage unavailable */
+    }
   };
-  return <Button variant="ghost" size="icon" onClick={toggle} aria-label="Toggle theme">
-      {dark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-    </Button>;
+
+  return (
+    <button
+      type="button"
+      onClick={toggle}
+      className="icon-btn"
+      aria-label={dark ? "Switch to light theme" : "Switch to dark theme"}
+      aria-pressed={dark}
+    >
+      {dark ? <Sun className="h-[18px] w-[18px]" aria-hidden /> : <Moon className="h-[18px] w-[18px]" aria-hidden />}
+    </button>
+  );
 }
